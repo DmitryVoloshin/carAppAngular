@@ -1,5 +1,6 @@
 import { Car } from "../car.model";
 import { Action } from "@ngrx/store";
+import { CAR_ACTION, AddCar } from "./cars.action";
 
 
 const initialState = {
@@ -11,6 +12,14 @@ const initialState = {
 }
 
 
-export function carsReducer(state = initialState , action : Action ) {
-
+export function carsReducer(state = initialState , action : AddCar ) {
+    switch(action.type){
+        case CAR_ACTION.ADD_CAR:
+           return{
+               ...state,
+               cars: [...state.cars, action.payload]
+           }
+        default:
+        return state
+    }
 }
