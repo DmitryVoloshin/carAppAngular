@@ -40,6 +40,6 @@ onAdd(){
   this.carModel = ''
   this.carName = ''
 }
-onLoad(){  // todo 
+onLoad(){ 
 }
 }
